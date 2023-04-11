@@ -13,5 +13,9 @@ jobs:
       - run: cd static/hello-world && npm install
       - run: cd static/hello-world && npm run build
       - run: npm install --global @forge/cli
+      - name: Authenticate with Forge
+        env:
+          FORGE_EMAIL: ${{ secrets.FORGE_EMAIL }}
+          FORGE_API_TOKEN: ${{ secrets.FORGE_API_TOKEN }}
       - run: forge settings set usage-analytics true
       - run: forge deploy -e production
