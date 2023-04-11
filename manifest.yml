@@ -1,0 +1,15 @@
+modules:
+  jira:globalPage:
+    - key: deploy-test-hello-world-page
+      resource: main
+      resolver:
+        function: resolver
+      title: deploy-test
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  id: ari:cloud:ecosystem::app/3bfab33b-5682-4f0b-ba72-bda956a41b42
