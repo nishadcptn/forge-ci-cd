@@ -10,4 +10,6 @@ jobs:
       - name: npm install 
         run: |
           cd ${{ github.workspace }} && npm install
-      - run: ls
+      - run: cd static/hello-world
+      - run: npm install 
+      - run: npm run build
