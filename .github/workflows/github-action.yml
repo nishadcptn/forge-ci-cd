@@ -12,3 +12,7 @@ jobs:
           cd ${{ github.workspace }} && npm install
       - run: cd static/hello-world && npm install
       - run: cd static/hello-world && npm run build
+      - run: npm install --global @forge/cli
+      - run: forge settings set usage-analytics true
+      - run: forge lint
+      - run: forge deploy -e production
